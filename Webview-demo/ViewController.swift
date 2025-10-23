@@ -75,21 +75,21 @@ class WebViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         
-        view.addSubview(webView)
         view.addSubview(closeButton)
+        view.addSubview(webView)
         
         NSLayoutConstraint.activate([
+            // Close button constraints
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            closeButton.widthAnchor.constraint(equalToConstant: 80),
+            closeButton.heightAnchor.constraint(equalToConstant: 40),
+            
             // WebView constraints
-            webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            webView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 20),
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            webView.bottomAnchor.constraint(equalTo: closeButton.topAnchor, constant: -20),
-            
-            // Close button constraints
-            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            closeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            closeButton.heightAnchor.constraint(equalToConstant: 50)
+            webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
