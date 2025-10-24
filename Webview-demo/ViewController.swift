@@ -89,7 +89,7 @@ class WebViewController: UIViewController {
             webView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 20),
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
